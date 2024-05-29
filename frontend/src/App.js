@@ -24,7 +24,9 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post('http://127.0.0.1:5000/predict', formData);
+    // const response = await axios.post('http://127.0.0.1:5000/predict', formData);
+    const response = await axios.post('https://titanic-survival-prediciton.onrender.com', formData);
+
     setPrediction(response.data.prediction);
   };
 
