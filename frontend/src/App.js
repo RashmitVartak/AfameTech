@@ -4,13 +4,13 @@ import './App.css';
 
 function App() {
   const [formData, setFormData] = useState({
-    Pclass: '',
-    Age: '',
-    SibSp: '',
-    Parch: '',
-    Fare: '',
-    Sex: '',
-    Embarked: ''
+    Pclass: 0,
+    Age_wiki: 0,
+    SibSp: 0,
+    Parch: 0,
+    Fare: 0,
+    Sex: 0,
+    Embarked: 0
   });
 
   const [prediction, setPrediction] = useState('');
@@ -24,7 +24,8 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post('https://tatyanick-prediction.onrender.com/', formData);
+    const response = await axios.post('https://tatyanick-prediction.onrender.com/predict', formData);
+
 
     setPrediction(response.data.prediction);
   };
